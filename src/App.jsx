@@ -6,19 +6,25 @@ import BasementsPage from "./pages/BasementsPage";
 import BathroomsPage from "./pages/BathroomsPage";
 import ContactPage from "./pages/ContactPage";
 import KitchensPage from "./pages/KitchensPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<AboutPage />} />
-        <Route path="/basements" element={<BasementsPage />} />
-        <Route path="/bathrooms" element={<BathroomsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/kitchens" element={<KitchensPage />} />
-      </Routes>
-    </Router>
+    <div className="flex flex-col min-h-screen">
+      <Router>
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<AboutPage />} />
+            <Route path="/basements" element={<BasementsPage />} />
+            <Route path="/bathrooms" element={<BathroomsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/kitchens" element={<KitchensPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

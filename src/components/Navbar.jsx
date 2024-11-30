@@ -3,7 +3,7 @@ import eliasLogo from "/logo-navbar.svg";
 
 const Navbar = () => {
   return (
-    <header className="bg-white shadow">
+    <header className="bg-gray-100 shadow">
       <nav className="max-w-screen-xl mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           <img src={eliasLogo} alt="Elias Construction" className="h-10 md:h-12 lg:h-14" />
@@ -11,25 +11,25 @@ const Navbar = () => {
             {/*TODO separate navigation for mobile (hence hidden by default) */}
             <Link
               to="/"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-1"
+              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
             >
               About
             </Link>
             <Link
               to="/basements"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-1"
+              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
             >
               Basements
             </Link>
             <Link
               to="/kitchens"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-1"
+              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
             >
               Kitchens
             </Link>
             <Link
               to="/bathrooms"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-1"
+              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
             >
               Bathrooms
             </Link>

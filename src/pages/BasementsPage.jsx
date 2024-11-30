@@ -1,8 +1,10 @@
 const BasementsPage = () => {
   return (
     <div className="basements-page">
-      <h1>Basements</h1>
-      <p>This is the home page content.</p>
+      <div className="max-w-screen-xl mx-auto px-4">
+        <h1>Basements</h1>
+        <p>This is the home page content.</p>
+      </div>
     </div>
   );
 };
