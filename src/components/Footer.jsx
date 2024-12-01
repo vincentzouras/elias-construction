@@ -1,9 +1,11 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 shadow">
-      <div className="max-w-screen-xl mx-auto px-4 py-2">
-        <p>Copyright © 2024 Elias Zouras Custom Builder Inc (Lic. # PA012997) doing business as Elias Construction. </p>
-        <p>
+    <footer className="bg-white">
+      <div className="margin py-2 text-sm">
+        <p className="mb-1">
+          Copyright © 2024 Elias Zouras Custom Builder Inc (Lic. # PA012997) doing business as Elias Construction.{" "}
+        </p>
+        <p className="mb-1">
           All rights reserved. Remodeling, Additions, and custom Homes contractor servicing all cities within Chester
           County PA and Delaware County PA including:
         </p>

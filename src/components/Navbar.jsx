@@ -1,41 +1,31 @@
 import { Link } from "react-router-dom";
-import eliasLogo from "/logo-navbar.svg";
+import logo from "/logoname.svg";
+import menu from "/menu.svg";
 
 const Navbar = () => {
   return (
-    <header className="bg-gray-100 shadow">
+    <header className="bg-white w-full z-50 fixed">
       <nav className="max-w-screen-xl mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
-          <img src={eliasLogo} alt="Elias Construction" className="h-10 md:h-12 lg:h-14" />
+          <img src={logo} alt="Elias Construction" className="h-10 md:h-12 lg:h-14" />
+          <img className="block md:hidden" src={menu} />
           <div className="hidden md:flex md:items-center md:space-x-8">
             {/*TODO separate navigation for mobile (hence hidden by default) */}
-            <Link
-              to="/"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
-            >
+            <Link to="/" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
               About
             </Link>
-            <Link
-              to="/basements"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
-            >
+            <Link to="/basements" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
               Basements
             </Link>
-            <Link
-              to="/kitchens"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
-            >
+            <Link to="/kitchens" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
               Kitchens
             </Link>
-            <Link
-              to="/bathrooms"
-              className="text-gray-900 hover:text-gray-700 hover:bg-gray-200 transition duration-300 rounded px-2 py-2"
-            >
+            <Link to="/bathrooms" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
               Bathrooms
             </Link>
             <Link to="/contact">
-              <button className="bg-eliasOrange-500  rounded-full px-4 py-2 hover:bg-eliasBlue-500 hover:text-white text-center transition duration-300">
-                Contact
+              <button className="hover:bg-eliasOrange-500 rounded px-4 py-2 bg-eliasBlue-500 hover:text-gray-900 text-white text-center transition duration-300">
+                Contact Us
               </button>
             </Link>
           </div>
