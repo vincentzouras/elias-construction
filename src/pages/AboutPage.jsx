@@ -1,4 +1,5 @@
 import logoremodel from "/logoremodel.svg";
+import ImageCarousel from "../components/ImageCarousel";
 
 const AboutPage = () => {
   return (
@@ -16,6 +17,7 @@ const AboutPage = () => {
           dicta animi illo repellat tempora possimus voluptas, incidunt magni maiores earum dignissimos quos! Nesciunt,
           qui numquam!
         </p>
+        <ImageCarousel />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "/logoname.svg";
+import logo from "/logo.svg";
 import menu from "/menu.svg";
 
 const Navbar = () => {
