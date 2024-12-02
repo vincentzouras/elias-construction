@@ -11,20 +11,29 @@ const Navbar = () => {
           <img className="block md:hidden" src={menu} />
           <div className="hidden md:flex md:items-center md:space-x-8">
             {/*TODO separate navigation for mobile (hence hidden by default) */}
-            <Link to="/" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
+            <Link to="/" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded-md px-4 py-2">
               About
             </Link>
-            <Link to="/basements" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
+            <Link
+              to="/basements"
+              className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded-md px-4 py-2"
+            >
               Basements
             </Link>
-            <Link to="/kitchens" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
+            <Link
+              to="/kitchens"
+              className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded-md px-4 py-2"
+            >
               Kitchens
             </Link>
-            <Link to="/bathrooms" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded px-4 py-2">
+            <Link
+              to="/bathrooms"
+              className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded-md px-4 py-2"
+            >
               Bathrooms
             </Link>
             <Link to="/contact">
-              <button className="hover:bg-eliasOrange-500 rounded px-4 py-2 bg-eliasBlue-500 hover:text-gray-900 text-white text-center transition duration-300">
+              <button className="hover:bg-eliasOrange-500 rounded-md px-4 py-2 bg-eliasBlue-500 hover:text-gray-900 text-white transition duration-300">
                 Contact Us
               </button>
             </Link>
