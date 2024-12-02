@@ -7,6 +7,7 @@ import BathroomsPage from "./pages/BathroomsPage";
 import ContactPage from "./pages/ContactPage";
 import KitchensPage from "./pages/KitchensPage";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Navbar />
         <main className="flex-grow">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<AboutPage />} />
             <Route path="/basements" element={<BasementsPage />} />
