@@ -1,6 +1,8 @@
 import logoremodel from "/logoremodel.svg";
 import ImageCarousel from "../components/ImageCarousel";
-
+import image1 from "../assets/images/additionslide1.webp";
+import image2 from "../assets/images/additionslide2.webp";
+import image3 from "../assets/images/additionslide3.webp";
 const AboutPage = () => {
   return (
     <div className="about-page">
@@ -17,7 +19,7 @@ const AboutPage = () => {
           dicta animi illo repellat tempora possimus voluptas, incidunt magni maiores earum dignissimos quos! Nesciunt,
           qui numquam!
         </p>
-        <ImageCarousel />
+        <ImageCarousel images={[image1, image2, image3]} />
       </div>
     </div>
   );

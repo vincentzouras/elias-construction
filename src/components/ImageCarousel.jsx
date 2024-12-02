@@ -1,15 +1,12 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 import leftArrow from "../../public/leftArrow.svg";
 import rightArrow from "../../public/rightArrow.svg";
 
-import image1 from "../assets/images/additionslide1.webp";
-import image2 from "../assets/images/additionslide2.webp";
-import image3 from "../assets/images/additionslide3.webp";
-
-const ImageCarousel = () => {
-  const images = [image1, image2, image3];
+const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [interactedWith, setInteractedWith] = useState(false);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
@@ -18,16 +15,38 @@ const ImageCarousel = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
+  useEffect(() => {
+    if (interactedWith) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [interactedWith, images.length]);
+
   return (
-    <div className="relative max-w-2xl mx-auto">
+    <div className="relative max-w-2xl mx-auto ">
       {/* image */}
       <div className="overflow-hidden rounded-lg">
-        <img src={images[currentIndex]} alt={"Slide ${currentIndex + 1}"} className="object-cover w-full" />
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+        >
+          {images.map((src, index) => (
+            <div key={index} className="w-full flex-shrink-0 overflow-hidden rounded-lg">
+              <img src={src} alt={`Slide ${index + 1}`} className="w-full object-cover rounded-lg" />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* next */}
       <button
-        onClick={nextSlide}
+        onClick={() => {
+          nextSlide();
+          setInteractedWith(true);
+        }}
         className="absolute top-1/2 right-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
       >
         <img src={rightArrow} alt="" className="text-white" />
@@ -35,7 +54,10 @@ const ImageCarousel = () => {
 
       {/* previous */}
       <button
-        onClick={prevSlide}
+        onClick={() => {
+          prevSlide();
+          setInteractedWith(true);
+        }}
         className="absolute top-1/2 left-4 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
       >
         <img src={leftArrow} alt="" />
