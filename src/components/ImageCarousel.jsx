@@ -24,7 +24,7 @@ const ImageCarousel = ({ images }) => {
   }, [interactedWith, images.length]);
 
   return (
-    <div className="relative max-w-2xl mx-auto ">
+    <div className="relative md:max-w-3xl w-full mx-auto ">
       {/* image */}
       <div className="overflow-hidden rounded-lg">
         <div
