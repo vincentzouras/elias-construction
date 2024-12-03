@@ -1,7 +1,7 @@
 import ContactForm from "../components/ContactForm";
-import mailIcon from "../assets/mail.svg";
-import locationIcon from "../assets/location.svg";
-import phoneIcon from "../assets/phone.svg";
+import mailIcon from "../assets/icons/mail.svg";
+import locationIcon from "../assets/icons/location.svg";
+import phoneIcon from "../assets/icons/phone.svg";
 
 const ContactPage = () => {
   return (
