@@ -33,7 +33,6 @@ const ContactPage = () => {
 
 const Map = () => {
   return (
-    //TODO cannot get env to work
     <div className="margin ">
       <iframe
         src={`https://www.google.com/maps/embed/v1/place?key=${
