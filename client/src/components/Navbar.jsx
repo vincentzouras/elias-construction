@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <img src={logo} alt="Elias Construction" className="h-10 md:h-12 lg:h-14" />
           <img className="block md:hidden" src={menu} />
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-0 lg:space-x-8">
             {/*TODO separate navigation for mobile (hence hidden by default) */}
             <Link to="/" className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded-md px-4 py-2">
               About
@@ -32,8 +32,14 @@ const Navbar = () => {
             >
               Bathrooms
             </Link>
+            <Link
+              to="/testimonials"
+              className="text-gray-900 hover:bg-gray-200 transition duration-300 rounded-md px-4 py-2"
+            >
+              Testimonials
+            </Link>
             <Link to="/contact">
-              <button className="hover:bg-eliasOrange-500 rounded-md px-4 py-2 bg-eliasBlue-500 hover:text-gray-900 text-white transition duration-300">
+              <button className="hover:bg-eliasOrange-500 rounded-md px-4 py-2 bg-eliasBlue-500 hover:text-gray-900 text-white transition duration-300 whitespace-nowrap">
                 Contact Us
               </button>
             </Link>

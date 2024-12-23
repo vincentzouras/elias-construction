@@ -8,6 +8,7 @@ import ContactPage from "./pages/ContactPage";
 import KitchensPage from "./pages/KitchensPage";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import TestimonialsPage from "./pages/TestimonialsPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/bathrooms" element={<BathroomsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/kitchens" element={<KitchensPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
           </Routes>
         </main>
         <Footer />
