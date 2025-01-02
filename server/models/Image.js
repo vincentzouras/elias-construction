@@ -12,7 +12,7 @@ const imageSchema = new mongoose.Schema(
     },
     category: {
       type: String, // to categorize what it is a picture of (kitchen, bathroom, etc)
-      required: true,
+      required: false,
     },
   },
   {

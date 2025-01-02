@@ -1,6 +1,7 @@
 import express from "express";
 import { uploadImage } from "../controllers/imagesController.js";
 import multer from "multer";
+import authenticateApiKey from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -24,6 +25,6 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
-router.post("/", upload.single("image"), uploadImage);
+router.post("/", authenticateApiKey, upload.single("image"), uploadImage);
 
 export default router;
