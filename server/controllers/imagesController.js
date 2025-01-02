@@ -1,18 +1,49 @@
 import Image from "../models/Image.js";
+import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import path from "path";
 
 export const uploadImage = async (req, res) => {
-  const { name, imageUrl, category } = req.body;
-
-  if (!image.name || !image.imageUrl || !image.category) {
-    return res.status(400).json({ success: false, message: "not all fields entered" });
-  }
-
   try {
-    const newImage = new Image({ name, imageUrl, category });
-    await newImage.save();
-    res.status(201).json({ success: true, data: newImage });
+    const fileExtension = path.extname(req.file.originalname);
+
+    const uniqueFileName = `${crypto.randomUUID()}${fileExtension}`;
+
+    // create instance of s3 with stored variables (s3 cloud storage)
+    const s3 = new S3Client({
+      region: process.env.AWS_REGION,
+      credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET,
+      },
+    });
+
+    const params = {
+      Bucket: process.env.AWS_BUCKET_NAME,
+      Key: uniqueFileName,
+      Body: req.file.buffer,
+    };
+
+    const command = new PutObjectCommand(params);
+    const response = await s3.send(command);
+
+    console.log(response);
+
+    const image = new Image({
+      name: req.body.name,
+      imageUrl: `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${uniqueFileName}`,
+      category: req.body.category,
+    });
+
+    const result = await image.save();
+
+    res.status(200).send({
+      _id: result._id,
+      name: result.name,
+      imageUrl: image.imageUrl,
+      category: result.category,
+    });
   } catch (error) {
-    console.error("error creating image: ", error.message);
-    res.status(500).json({ success: false, message: "server error" });
+    console.error("Error uploading image:", error.message);
+    res.status(500).send({ error: error.message });
   }
 };

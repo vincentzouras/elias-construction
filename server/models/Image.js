@@ -4,7 +4,7 @@ const imageSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: false,
     },
     imageUrl: {
       type: String, // hold a link to AWS S3
