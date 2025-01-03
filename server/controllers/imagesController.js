@@ -47,3 +47,25 @@ export const uploadImage = async (req, res) => {
     res.status(500).send({ error: error.message });
   }
 };
+
+export const getImageByName = async (req, res) => {
+  try {
+    const name = req.params.name;
+    const image = await Image.findOne({ name: name });
+    res.status(200).json(image);
+  } catch (error) {
+    console.error("error getting image by name: " + error.message);
+    res.status(500).send({ error: error.message });
+  }
+};
+
+export const getImagesByCategory = async (req, res) => {
+  try {
+    const category = req.params.category;
+    const images = await Image.find({ category: category });
+    res.status(200).json(images);
+  } catch (error) {
+    console.error("error getting images by category: " + error.message);
+    res.status(500).send({ error: error.message });
+  }
+};
