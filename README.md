@@ -20,5 +20,8 @@ This project aims to deploy a full-stack web application consisting of a **React
 - **Frontend**:
   - **Amazon S3**: For hosting the React frontend as a static website.
 - **Backend**:
+
   - **AWS Lambda**: For running the serverless Express API.
   - **Amazon API Gateway**: To expose the Express API over HTTP.
+
+  TODO need to restrict s3 access to only my domain using CORS
