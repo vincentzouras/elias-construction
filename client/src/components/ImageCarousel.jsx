@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-import leftArrow from "../assets/icons/leftArrow.svg";
-import rightArrow from "../assets/icons/rightArrow.svg";
+import leftArrow from "../../public/icons/leftArrow.svg";
+import rightArrow from "../../public/icons/rightArrow.svg";
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
