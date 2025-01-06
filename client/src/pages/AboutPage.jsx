@@ -1,9 +1,9 @@
 import logoremodel from "/logoremodel.svg";
 import ImageCarousel from "../components/ImageCarousel";
-import image1 from "../assets/images/DSCN0449.webp";
-import image2 from "../assets/images/additionslide2.webp";
-import image3 from "../assets/images/additionslide3.webp";
-import backgroundImage from "../assets/background.jpg";
+import image1 from "../../public/background.jpg";
+import image2 from "../../public/background.jpg";
+import image3 from "../../public/background.jpg";
+import backgroundImage from "../../public/background.jpg";
 
 const AboutPage = () => {
   return (
