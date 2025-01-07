@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,30 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const apiEndpoint = import.meta.env.VITE_BACKEND_API_URL;
+    const apiKey = import.meta.env.VITE_BACKEND_API_KEY;
+
+    try {
+      const response = await axios.post(`${apiEndpoint}/email/`, formData, { headers: { "x-api-key": apiKey } });
+      if (response.status === 200) {
+        alert("We got your message! Elias will get in touch shortly.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          homeAddress: "",
+          message: "",
+        });
+      } else {
+        alert("Something went wrong. Please email Elias directly, with the email listed below.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error.message);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-gray-200 rounded-lg space-y-4">

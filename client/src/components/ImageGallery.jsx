@@ -1,5 +1,5 @@
 import { useState } from "react";
-import closeButton from "/icons/close.svg";
+import closeButton from "/icons/closeButton.svg";
 
 const ImageGallery = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
