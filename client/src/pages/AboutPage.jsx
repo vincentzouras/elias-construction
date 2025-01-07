@@ -2,6 +2,7 @@ import logoremodel from "/logoremodel.svg";
 import ImageCarousel from "../components/ImageCarousel";
 import backgroundImage from "/background.jpg";
 import FetchImage from "../hooks/FetchImage";
+import ImageGallery from "../components/ImageGallery";
 
 const AboutPage = () => {
   return (
@@ -12,7 +13,9 @@ const AboutPage = () => {
       </div>
       {/* highlights */}
       <div className="mt-10">
-        <ImageCarousel images={FetchImage("category", "about")} />
+        <ImageCarousel
+          images={[FetchImage("name", "IMG_1.jpg"), FetchImage("name", "IMG_2.jpg"), FetchImage("name", "IMG_3.jpg")]} // using category didnt give right order oopsie
+        />
       </div>
       {/* quality matters */}
       <div className="margin my-20">
@@ -60,7 +63,9 @@ const AboutPage = () => {
       {/* about us */}
       <div className="margin h-screen"></div>
       {/* featured work */}
-      <div className="margin"></div>
+      <div className="margin">
+        <ImageGallery images={FetchImage("category", "featured")} />
+      </div>
     </div>
   );
 };
