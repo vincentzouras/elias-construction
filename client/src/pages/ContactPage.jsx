@@ -1,7 +1,7 @@
 import ContactForm from "../components/ContactForm";
-import mailIcon from "../../public/icons/mail.svg";
-import locationIcon from "../../public/icons/location.svg";
-import phoneIcon from "../../public/icons/phone.svg";
+import mailIcon from "/icons/mail.svg";
+import locationIcon from "/icons/location.svg";
+import phoneIcon from "/icons/phone.svg";
 
 const ContactPage = () => {
   return (
@@ -36,7 +36,7 @@ const Map = () => {
     <div className="margin ">
       <iframe
         src={`https://www.google.com/maps/embed/v1/place?key=${
-          import.meta.env.VITE_API_KEY
+          import.meta.env.VITE_MAPS_API_KEY
         }&q=1436+Telegraph+Road,West+Chester,PA+19380&zoom=12`}
         height={500}
         style={{ border: 0 }}

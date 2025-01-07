@@ -8,9 +8,9 @@ import axios from "axios";
 import FormData from "form-data";
 
 // Configuration
-const folderPath = "C:/Users/vince/Desktop/newImages";
+const folderPath = "C:/Users/vince/Desktop/images";
 const apiUrl = "http://localhost:5000/api/images";
-const apiKey = "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE";
+const apiKey = "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE";
 
 const uploadImage = async (filePath) => {
   try {
@@ -20,6 +20,7 @@ const uploadImage = async (filePath) => {
     // Add the image file
     form.append("image", fs.createReadStream(filePath));
     form.append("category", "new");
+    form.append("name", fileName);
 
     const headers = {
       ...form.getHeaders(),

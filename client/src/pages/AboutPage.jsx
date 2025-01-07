@@ -1,9 +1,7 @@
 import logoremodel from "/logoremodel.svg";
 import ImageCarousel from "../components/ImageCarousel";
-import image1 from "../../public/background.jpg";
-import image2 from "../../public/background.jpg";
-import image3 from "../../public/background.jpg";
-import backgroundImage from "../../public/background.jpg";
+import backgroundImage from "/background.jpg";
+import FetchImage from "../hooks/FetchImage";
 
 const AboutPage = () => {
   return (
@@ -14,7 +12,7 @@ const AboutPage = () => {
       </div>
       {/* highlights */}
       <div className="mt-10">
-        <ImageCarousel images={[image1, image2, image3]} />
+        <ImageCarousel images={FetchImage("category", "about")} />
       </div>
       {/* quality matters */}
       <div className="margin my-20">

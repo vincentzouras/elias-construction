@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
-import leftArrow from "../../public/icons/leftArrow.svg";
-import rightArrow from "../../public/icons/rightArrow.svg";
+import leftArrow from "/icons/leftArrow.svg";
+import rightArrow from "/icons/rightArrow.svg";
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,7 +24,7 @@ const ImageCarousel = ({ images }) => {
   }, [interactedWith, images.length]);
 
   return (
-    <div className="relative md:max-w-3xl w-full mx-auto ">
+    <div className="relative md:max-w-3xl w-full mx-auto">
       {/* image */}
       <div className="overflow-hidden rounded-lg">
         <div
@@ -34,8 +34,16 @@ const ImageCarousel = ({ images }) => {
           }}
         >
           {images.map((src, index) => (
-            <div key={index} className="w-full flex-shrink-0 overflow-hidden rounded-lg">
-              <img src={src} alt={`Slide ${index + 1}`} className="w-full object-cover rounded-lg" />
+            <div
+              key={index}
+              className="w-full flex-shrink-0 overflow-hidden rounded-lg"
+              style={{ height: "100%" }} // Ensure the div takes up the full height of its container
+            >
+              <img
+                src={src}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover rounded-lg" // Ensure images fill the container
+              />
             </div>
           ))}
         </div>
