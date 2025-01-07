@@ -61,9 +61,37 @@ const AboutPage = () => {
         </div>
       </div>
       {/* about us */}
-      <div className="margin h-screen"></div>
+      <div className="margin flex flex-col">
+        <div className="mt-32">
+          <h1 className="text-5xl font-bold mb-16 text-center">About Elias Construction</h1>
+          <p className="text-7xl font-bold text-gray-700 text-center ">28</p>
+          <p className="text-lg text-center">years of experience</p>
+        </div>
+        <div className="flex p-20 gap-5 w-full">
+          <div className="w-1/2 flex items-center">
+            <img src={FetchImage("name", "profile_picture.webp")} alt="" className="overflow-hidden rounded-lg" />
+          </div>
+          <div className="w-1/2 flex flex-col gap-12">
+            <p>
+              Our staff is very KNOWLEDGEABLE and strive to provide the best VALUE to each of our customers. In
+              addition, a high level of SKILL is executed by each and every employee and subcontractor.
+            </p>
+            <p>
+              We can work with you to define options and prioritize the different dimensions of your project (
+              customization, speed, and cost) to meet all your needs.
+            </p>
+            <p>
+              As President of the company, Elias Zouras is a very involved, hands on, at the job-site contractor. Since
+              1993, when Elias graduated with his degree from Gettysburg College, his company has been beautifying homes
+              in the suburbs of Western Philadelphia.
+            </p>
+            <p>Elias is a TALENTED contractor and your local trusted EXPERT!</p>
+          </div>
+        </div>
+      </div>
       {/* featured work */}
-      <div className="margin">
+      <div className="margin mt-12">
+        <h1 className="text-5xl text-center font-bold mb-12">Some of our featured work</h1>
         <ImageGallery images={FetchImage("category", "featured")} />
       </div>
     </div>

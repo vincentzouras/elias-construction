@@ -1,9 +1,10 @@
+import ImageGallery from "../components/ImageGallery";
+import FetchImage from "../hooks/FetchImage";
 const KitchensPage = () => {
   return (
-    <div className="kitchens-page">
-      <div className="max-w-screen-xl mx-auto px-4">
-        <h1>Kitchens</h1>
-        <p>This is the home page content.</p>
+    <div className="kitchens-page mt-20">
+      <div className="margin">
+        <ImageGallery images={FetchImage("category", "new").slice(20, 40)} /> {/* placeholder */}
       </div>
     </div>
   );
