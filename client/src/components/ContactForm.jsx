@@ -5,8 +5,8 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    homeAddress: "",
+    number: "",
+    address: "",
     message: "",
   });
 
@@ -28,8 +28,8 @@ const ContactForm = () => {
         setFormData({
           name: "",
           email: "",
-          phone: "",
-          homeAddress: "",
+          number: "",
+          address: "",
           message: "",
         });
       } else {
@@ -75,12 +75,13 @@ const ContactForm = () => {
           Phone number
         </label>
         <input
-          type="phone"
-          id="phone"
-          name="phone"
+          type="tel"
+          id="number"
+          name="number"
           value={formData.phone}
           onChange={handleChange}
           required
+          pattern="[0-9]{10}"
           className="mt-1 block w-full px-4 py-2 border rounded-md"
         />
       </div>
@@ -89,9 +90,9 @@ const ContactForm = () => {
           Home address
         </label>
         <input
-          type="tel"
-          id="homeAddress"
-          name="homeAddress"
+          type="text"
+          id="address"
+          name="address"
           value={formData.homeAddress}
           onChange={handleChange}
           required

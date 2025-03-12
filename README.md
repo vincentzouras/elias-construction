@@ -1,12 +1,12 @@
 # Full-Stack Website for Elias Construction using AWS
 
-### Frontend:
+## Frontend
 
 - **React**: Used to build the user interface.
 - **Vite**: For fast bundling and development.
 - **Tailwind CSS**: For styling the app.
 
-### Backend:
+## Backend
 
 - **Node** (Express): The backend will process the contact form submissions and send emails, as well as fetch images from the database.
 - **MongoDB**: To store image metadata include S3 links for easy image retrieval.
